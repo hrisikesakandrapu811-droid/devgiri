@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery | Devgiri Residency Lodge</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="View photos of Devgiri Residency on Yadagirigutta Main Road. Take a virtual tour of our premium A/C rooms, lobby, parking, and building exterior.">
+    <meta name="keywords" content="Yadagirigutta hotel photos, Yadadri lodge images, Devgiri gallery, hotel rooms tour">
+    <meta name="author" content="Devgiri Residency">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="subpage">
+
+    <!-- Header / Navigation -->
+    <header class="header header-subpage" id="header">
+        <div class="container nav-wrapper">
+            <a href="index.html" class="logo">
+                <span class="logo-text">Devgiri <span class="logo-accent">Residency</span></span>
+            </a>
+            
+            <nav class="nav">
+                <ul class="nav-list" id="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="rooms.html" class="nav-link">Rooms</a></li>
+                    <li><a href="facilities.html" class="nav-link">Facilities</a></li>
+                    <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-action">
+                <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Photo Gallery Section -->
+    <section class="gallery-section section-padding">
+        <div class="container">
+            <div class="section-title-wrapper" style="margin-bottom: 3.5rem;">
+                <span class="section-subtitle">Visual Tour</span>
+                <h2 class="section-title">Photo Gallery</h2>
+            </div>
+            <div class="gallery-grid">
+                <!-- 7 Photos mapped into gallery -->
+                <div class="gallery-item wide" data-index="0">
+                    <img src="https://i.ibb.co/gFvgZC1C/5-jpg.jpg" alt="Devgiri Residency Reception" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-icon-view">
+                            <i data-lucide="maximize-2"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item tall" data-index="1">
+                    <img src="https://i.ibb.co/bM3XrhqL/11-jpg.jpg" alt="Premium A/C Room" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-icon-view">
+                            <i data-lucide="maximize-2"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-index="2">
+                    <img src="https://i.ibb.co/FqXy8by3/2-jpg.jpg" alt="Standard Non-A/C Room" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-icon-view">
+                            <i data-lucide="maximize-2"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-index="3">
+                    <img src="https://i.ibb.co/SwTjFXyS/6-jpg.jpg" alt="Secure Parking Space" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-icon-view">
+                            <i data-lucide="maximize-2"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item wide" data-index="4">
+                    <img src="https://i.ibb.co/0prGJ5Wv/7-jpg.jpg" alt="Peaceful Surrounding Balcony" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-icon-view">
+                            <i data-lucide="maximize-2"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-index="5">
+                    <img src="https://i.ibb.co/mVWkMCVF/3-jpg.jpg" alt="Sitting Area Lounge" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-icon-view">
+                            <i data-lucide="maximize-2"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-index="6">
+                    <img src="https://i.ibb.co/gFD57xny/4-jpg.jpg" alt="Building Corridor View" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-icon-view">
+                            <i data-lucide="maximize-2"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightbox-close">&times;</button>
+            <button class="lightbox-btn lightbox-prev" id="lightbox-prev">&#10094;</button>
+            <img src="" alt="Enlarged gallery view" class="lightbox-img" id="lightbox-img">
+            <button class="lightbox-btn lightbox-next" id="lightbox-next">&#10095;</button>
+        </div>
+    </div>
+
+
+
+    <!-- Mobile Sticky Call/WhatsApp Float -->
+    <div class="sticky-mobile-bar">
+        <a href="tel:9246967337" class="sticky-action-btn">
+            <i data-lucide="phone" class="sticky-action-icon"></i> Call Now
+        </a>
+        <a href="https://wa.me/919246967337?text=Hi%2C%20I%20would%20like%20to%20inquire%20about%20booking%20a%20room%20at%20Devgiri%20Residency." target="_blank" rel="noopener noreferrer" class="sticky-action-btn">
+            <i data-lucide="message-square" class="sticky-action-icon"></i> WhatsApp
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="script.js"></script>
+</body>
+</html>
