@@ -136,4 +136,45 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 5. Language Switcher & Google Translate Sync
+    const langSwitcher = document.getElementById('lang-switcher');
+    if (langSwitcher) {
+        const storedLang = localStorage.getItem('selected_language') || 'en';
+        langSwitcher.value = storedLang;
+
+        const setGoogleTranslateLanguage = (langCode) => {
+            const googleSelect = document.querySelector('.goog-te-combo');
+            if (googleSelect) {
+                googleSelect.value = langCode;
+                googleSelect.dispatchEvent(new Event('change'));
+                return true;
+            }
+            return false;
+        };
+
+        langSwitcher.addEventListener('change', () => {
+            const langCode = langSwitcher.value;
+            localStorage.setItem('selected_language', langCode);
+            
+            if (!setGoogleTranslateLanguage(langCode)) {
+                let retries = 0;
+                const interval = setInterval(() => {
+                    if (setGoogleTranslateLanguage(langCode) || retries++ > 10) {
+                        clearInterval(interval);
+                    }
+                }, 200);
+            }
+        });
+
+        // Apply stored language once Google Translate is loaded
+        if (storedLang !== 'en') {
+            let retries = 0;
+            const interval = setInterval(() => {
+                if (setGoogleTranslateLanguage(storedLang) || retries++ > 15) {
+                    clearInterval(interval);
+                }
+            }, 300);
+        }
+    }
+
 });

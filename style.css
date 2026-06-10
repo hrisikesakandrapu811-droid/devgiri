@@ -340,7 +340,9 @@ button {
 }
 
 .header-action {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 /* Hamburger Menu */
@@ -1168,7 +1170,7 @@ button {
 }
 
 @media (max-width: 768px) {
-    .header-action {
+    .header-action .btn {
         display: none !important;
     }
 
@@ -1234,7 +1236,7 @@ button {
         font-size: 1.4rem;
     }
 
-    .burger-menu, .header-action {
+    .burger-menu {
         display: none !important;
     }
 
@@ -1579,6 +1581,58 @@ button {
         grid-template-columns: 1fr !important;
         gap: 1.25rem !important;
     }
+}
+
+/* Language Switcher Styling */
+.lang-selector-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.lang-switcher-select {
+    background: rgba(11, 15, 20, 0.4) !important;
+    border: 1px solid var(--clr-border-card) !important;
+    border-radius: var(--radius-sm) !important;
+    color: var(--clr-text-main) !important;
+    padding: 0.4rem 2rem 0.4rem 0.8rem !important;
+    font-family: var(--font-body) !important;
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+    transition: var(--transition-fast) !important;
+    outline: none !important;
+    cursor: pointer !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23C6A15B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 0.6rem center !important;
+    background-size: 0.9rem !important;
+}
+
+.lang-switcher-select:focus,
+.lang-switcher-select:hover {
+    border-color: var(--clr-accent) !important;
+    background-color: rgba(11, 15, 20, 0.6) !important;
+}
+
+.lang-switcher-select option {
+    background-color: var(--clr-bg-dark) !important;
+    color: var(--clr-text-main) !important;
+}
+
+/* Hide Google Translate top bar and default elements */
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame,
+#goog-gt-tt,
+.goog-te-balloon-frame {
+    display: none !important;
+}
+body {
+    top: 0px !important;
+}
+#google_translate_element {
+    display: none !important;
 }
 
 
