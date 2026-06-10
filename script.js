@@ -2,6 +2,13 @@
    Devgiri Residency - Simplified JS Controller
    ========================================================================== */
 
+// Set translation cookie immediately on load to prevent flash of untranslated text
+(function() {
+    const storedLang = localStorage.getItem('selected_language') || 'en';
+    document.cookie = "googtrans=/en/" + storedLang + "; path=/;";
+    document.cookie = "googtrans=/en/" + storedLang + "; path=/; domain=" + location.hostname + ";";
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
     
     // 1. Initialize Lucide Icons
@@ -156,24 +163,25 @@ document.addEventListener('DOMContentLoaded', () => {
             const langCode = langSwitcher.value;
             localStorage.setItem('selected_language', langCode);
             
-            if (!setGoogleTranslateLanguage(langCode)) {
-                let retries = 0;
-                const interval = setInterval(() => {
-                    if (setGoogleTranslateLanguage(langCode) || retries++ > 10) {
-                        clearInterval(interval);
-                    }
-                }, 200);
-            }
+            // Update translation cookies
+            document.cookie = "googtrans=/en/" + langCode + "; path=/;";
+            document.cookie = "googtrans=/en/" + langCode + "; path=/; domain=" + location.hostname + ";";
+            
+            // Try to translate programmatically, then reload to ensure 100% complete page translation
+            setGoogleTranslateLanguage(langCode);
+            setTimeout(() => {
+                window.location.reload();
+            }, 100);
         });
 
-        // Apply stored language once Google Translate is loaded
+        // Sync local dropdown view if cookie changes or on load
         if (storedLang !== 'en') {
             let retries = 0;
             const interval = setInterval(() => {
                 if (setGoogleTranslateLanguage(storedLang) || retries++ > 15) {
                     clearInterval(interval);
                 }
-            }, 300);
+            }, 200);
         }
     }
 

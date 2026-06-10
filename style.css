@@ -1632,7 +1632,13 @@ body {
     top: 0px !important;
 }
 #google_translate_element {
-    display: none !important;
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
 }
 
 
