@@ -1624,12 +1624,22 @@ button {
 /* Hide Google Translate top bar and default elements */
 .goog-te-banner-frame.skiptranslate,
 .goog-te-banner-frame,
+.goog-te-banner,
+iframe.goog-te-banner-frame,
+iframe.skiptranslate,
 #goog-gt-tt,
 .goog-te-balloon-frame {
     display: none !important;
 }
+
 body {
     top: 0px !important;
+    margin-top: 0px !important;
+}
+
+html {
+    top: 0px !important;
+    margin-top: 0px !important;
 }
 #google_translate_element {
     position: absolute !important;
