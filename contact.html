@@ -109,25 +109,90 @@
                             <i data-lucide="phone-call"></i> Call 98496 31918
                         </a>
                         <!-- WhatsApps -->
-                        <a href="https://wa.me/919246967337?text=Hi%2C%20I%20would%20like%20to%20inquire%20about%20booking%20a%20room%20at%20Devgiri%20Residency.%0A%0AMy%20Details%3A%0A-%20Name%3A%20%0A-%20Phone%3A%20%0A-%20Number%20of%20People%3A%20%0A-%20Check-in%20Date%3A%20%0A-%20Check-out%20Date%3A%20%0A-%20Room%20Type%20(AC%2FNon-AC)%3A%20" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+                        <a href="https://wa.me/919246967337?text=Hi%2C%20I%20would%20like%20to%20inquire%20about%20booking%20a%20room%20at%20Devgiri%20Residency." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
                             <i data-lucide="message-square"></i> Chat on WhatsApp (Primary)
                         </a>
-                        <a href="https://wa.me/919949950564?text=Hi%2C%20I%20would%20like%20to%20inquire%20about%20booking%20a%20room%20at%20Devgiri%20Residency.%0A%0AMy%20Details%3A%0A-%20Name%3A%20%0A-%20Phone%3A%20%0A-%20Number%20of%20People%3A%20%0A-%20Check-in%20Date%3A%20%0A-%20Check-out%20Date%3A%20%0A-%20Room%20Type%20(AC%2FNon-AC)%3A%20" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+                        <a href="https://wa.me/919949950564?text=Hi%2C%20I%20would%20like%20to%20inquire%20about%20booking%20a%20room%20at%20Devgiri%20Residency." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
                             <i data-lucide="message-square"></i> Chat on WhatsApp (Alt)
                         </a>
                     </div>
                 </div>
                 
-                <!-- Google Maps Location -->
-                <div class="map-container">
-                    <div class="map-placeholder-bg">
-                        <i data-lucide="map-pin" class="map-placeholder-icon"></i>
-                        <h4 class="map-placeholder-title">Lodge Location Map</h4>
-                        <p class="map-placeholder-desc">Devgiri Residency is conveniently located on Yadagirigutta Main Road, opposite Yadadri Bar & Restaurant (just an 8-minute walk to Surendrapuri). Click below to view directions on Google Maps.</p>
+                <!-- Right Column: Booking Form & Google Maps -->
+                <div class="contact-right-col" style="display: flex; flex-direction: column; gap: 2.5rem; width: 100%;">
+                    <!-- Room Booking Inquiry Form -->
+                    <div class="contact-info-card booking-form-container">
+                        <h3 class="contact-info-title">Book a Room via WhatsApp</h3>
+                        <p style="color: var(--clr-text-muted); margin-bottom: 2rem; font-size: 0.9rem; line-height: 1.6;">Enter your requirements below. Submitting will format your booking details and open WhatsApp automatically.</p>
                         
-                        <a href="https://maps.google.com/?q=Devgiri+Residency+Yadagirigutta" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                            <i data-lucide="navigation"></i> Open in Google Maps
-                        </a>
+                        <form id="booking-form" class="booking-form">
+                            <div class="form-group">
+                                <label for="guest-name" class="form-label">Full Name</label>
+                                <input type="text" id="guest-name" class="form-input" placeholder="e.g. John Doe" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="guest-phone" class="form-label">Phone Number</label>
+                                <input type="tel" id="guest-phone" class="form-input" placeholder="e.g. 99499 50564" required>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="guest-count" class="form-label">Number of People</label>
+                                    <input type="number" id="guest-count" class="form-input" min="1" placeholder="e.g. 2" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="room-type" class="form-label">Room Type</label>
+                                    <select id="room-type" class="form-select" required>
+                                        <option value="" disabled selected>Select Room</option>
+                                        <option value="AC Room">AC Room</option>
+                                        <option value="Non-AC Room">Non-AC Room</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="check-in-date" class="form-label">Check-in Date</label>
+                                    <input type="date" id="check-in-date" class="form-input" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="check-out-date" class="form-label">Check-out Date</label>
+                                    <input type="date" id="check-out-date" class="form-input" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group" style="margin-bottom: 1.5rem;">
+                                <label class="form-label">Send booking request to</label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="whatsapp-contact" value="9246967337" checked>
+                                        <span>Primary WhatsApp (92469 67337)</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="whatsapp-contact" value="9949950564">
+                                        <span>Alternative WhatsApp (99499 50564)</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-whatsapp" style="width: 100%; justify-content: center; padding: 0.9rem;">
+                                <i data-lucide="message-square"></i> Book via WhatsApp
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Google Maps Location -->
+                    <div class="map-container" style="margin-top: 0;">
+                        <div class="map-placeholder-bg">
+                            <i data-lucide="map-pin" class="map-placeholder-icon"></i>
+                            <h4 class="map-placeholder-title">Lodge Location Map</h4>
+                            <p class="map-placeholder-desc">Devgiri Residency is conveniently located on Yadagirigutta Main Road, opposite Yadadri Bar & Restaurant (just an 8-minute walk to Surendrapuri). Click below to view directions on Google Maps.</p>
+                            
+                            <a href="https://maps.google.com/?q=Devgiri+Residency+Yadagirigutta" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                                <i data-lucide="navigation"></i> Open in Google Maps
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -141,7 +206,7 @@
         <a href="tel:9246967337" class="sticky-action-btn">
             <i data-lucide="phone" class="sticky-action-icon"></i> Call Now
         </a>
-        <a href="https://wa.me/919246967337?text=Hi%2C%20I%20would%20like%20to%20inquire%20about%20booking%20a%20room%20at%20Devgiri%20Residency.%0A%0AMy%20Details%3A%0A-%20Name%3A%20%0A-%20Phone%3A%20%0A-%20Number%20of%20People%3A%20%0A-%20Check-in%20Date%3A%20%0A-%20Check-out%20Date%3A%20%0A-%20Room%20Type%20(AC%2FNon-AC)%3A%20" target="_blank" rel="noopener noreferrer" class="sticky-action-btn">
+        <a href="https://wa.me/919246967337?text=Hi%2C%20I%20would%20like%20to%20inquire%20about%20booking%20a%20room%20at%20Devgiri%20Residency." target="_blank" rel="noopener noreferrer" class="sticky-action-btn">
             <i data-lucide="message-square" class="sticky-action-icon"></i> WhatsApp
         </a>
     </div>

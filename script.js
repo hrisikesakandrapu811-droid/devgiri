@@ -94,5 +94,54 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 4. Booking Form Controller (Formulates WhatsApp message dynamically)
+    const bookingForm = document.getElementById('booking-form');
+    if (bookingForm) {
+        // Set minimum check-in date to today
+        const today = new Date().toISOString().split('T')[0];
+        const checkInInput = document.getElementById('check-in-date');
+        const checkOutInput = document.getElementById('check-out-date');
+        
+        if (checkInInput) {
+            checkInInput.min = today;
+            checkInInput.addEventListener('change', () => {
+                if (checkOutInput) {
+                    checkOutInput.min = checkInInput.value;
+                }
+            });
+        }
+
+        bookingForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('guest-name').value.trim();
+            const phone = document.getElementById('guest-phone').value.trim();
+            const guests = document.getElementById('guest-count').value.trim();
+            const roomType = document.getElementById('room-type').value;
+            const checkIn = document.getElementById('check-in-date').value;
+            const checkOut = document.getElementById('check-out-date').value;
+            const whatsappNumber = document.querySelector('input[name="whatsapp-contact"]:checked').value;
+            
+            // Format dates for display (e.g. YYYY-MM-DD -> DD/MM/YYYY)
+            const formatDate = (dateStr) => {
+                if (!dateStr) return '';
+                const parts = dateStr.split('-');
+                if (parts.length === 3) {
+                    return `${parts[2]}/${parts[1]}/${parts[0]}`;
+                }
+                return dateStr;
+            };
+
+            const formattedCheckIn = formatDate(checkIn);
+            const formattedCheckOut = formatDate(checkOut);
+
+            // Construct structured message
+            const message = `Hi, I would like to book a room at Devgiri Residency.\n\nMy Details:\n- Name: ${name}\n- Phone: ${phone}\n- Number of People: ${guests}\n- Check-in Date: ${formattedCheckIn}\n- Check-out Date: ${formattedCheckOut}\n- Room Type: ${roomType}`;
+            
+            // Encode message and open WhatsApp URL
+            const whatsappUrl = `https://wa.me/91${whatsappNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        });
+    }
 
 });
