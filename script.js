@@ -100,15 +100,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // Set minimum check-in date to today
         const today = new Date().toISOString().split('T')[0];
         const checkInInput = document.getElementById('check-in-date');
-        const checkOutInput = document.getElementById('check-out-date');
         
         if (checkInInput) {
             checkInInput.min = today;
-            checkInInput.addEventListener('change', () => {
-                if (checkOutInput) {
-                    checkOutInput.min = checkInInput.value;
-                }
-            });
         }
 
         bookingForm.addEventListener('submit', (e) => {
@@ -119,7 +113,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const guests = document.getElementById('guest-count').value.trim();
             const roomType = document.getElementById('room-type').value;
             const checkIn = document.getElementById('check-in-date').value;
-            const checkOut = document.getElementById('check-out-date').value;
             const whatsappNumber = document.querySelector('input[name="whatsapp-contact"]:checked').value;
             
             // Format dates for display (e.g. YYYY-MM-DD -> DD/MM/YYYY)
@@ -133,10 +126,9 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             const formattedCheckIn = formatDate(checkIn);
-            const formattedCheckOut = formatDate(checkOut);
 
             // Construct structured message
-            const message = `Hi, I would like to book a room at Devgiri Residency.\n\nMy Details:\n- Name: ${name}\n- Phone: ${phone}\n- Number of People: ${guests}\n- Check-in Date: ${formattedCheckIn}\n- Check-out Date: ${formattedCheckOut}\n- Room Type: ${roomType}`;
+            const message = `Hi, I would like to book a room at Devgiri Residency.\n\nMy Details:\n- Name: ${name}\n- Phone: ${phone}\n- Number of People: ${guests}\n- Check-in Date: ${formattedCheckIn}\n- Room Type: ${roomType}`;
             
             // Encode message and open WhatsApp URL
             const whatsappUrl = `https://wa.me/91${whatsappNumber}?text=${encodeURIComponent(message)}`;
