@@ -1440,129 +1440,144 @@ button {
 
 /* Booking Form Styles */
 .booking-form-container {
-    padding: 3rem 2.5rem;
+    padding: 3rem 2.5rem !important;
 }
 
 .booking-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+    width: 100% !important;
 }
 
 .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    text-align: left;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.5rem !important;
+    text-align: left !important;
+    width: 100% !important;
 }
 
 .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.25rem;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1.5rem !important;
+    width: 100% !important;
 }
 
 .form-label {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--clr-accent-light);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    display: block !important;
+    font-size: 0.8rem !important;
+    font-weight: 600 !important;
+    color: var(--clr-accent-light) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    margin-bottom: 0.2rem !important;
 }
 
 .form-input,
 .form-select {
-    background: rgba(11, 15, 20, 0.4);
-    border: 1px solid var(--clr-border-card);
-    border-radius: var(--radius-sm);
-    color: var(--clr-text-main);
-    padding: 0.8rem 1rem;
-    font-family: var(--font-body);
-    font-size: 0.95rem;
-    transition: var(--transition-fast);
-    outline: none;
-    width: 100%;
+    display: block !important;
+    background: rgba(11, 15, 20, 0.45) !important;
+    border: 1px solid var(--clr-border-card) !important;
+    border-radius: var(--radius-sm) !important;
+    color: var(--clr-text-main) !important;
+    padding: 0.8rem 1rem !important;
+    font-family: var(--font-body) !important;
+    font-size: 0.95rem !important;
+    transition: var(--transition-fast) !important;
+    outline: none !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
 }
 
 .form-input:focus,
 .form-select:focus {
-    border-color: var(--clr-accent);
-    box-shadow: 0 0 10px rgba(198, 161, 91, 0.15);
-    background: rgba(11, 15, 20, 0.7);
+    border-color: var(--clr-accent) !important;
+    box-shadow: 0 0 10px rgba(198, 161, 91, 0.15) !important;
+    background: rgba(11, 15, 20, 0.75) !important;
 }
 
 .form-select {
-    cursor: pointer;
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23C6A15B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 1rem center;
-    background-size: 1.2rem;
-    padding-right: 2.5rem;
+    cursor: pointer !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23C6A15B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 1rem center !important;
+    background-size: 1.2rem !important;
+    padding-right: 2.5rem !important;
 }
 
 .form-select option {
-    background-color: var(--clr-bg-dark);
-    color: var(--clr-text-main);
+    background-color: var(--clr-bg-dark) !important;
+    color: var(--clr-text-main) !important;
 }
 
 .radio-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+    margin-top: 0.25rem !important;
+    width: 100% !important;
 }
 
 .radio-label {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    cursor: pointer;
-    font-size: 0.95rem;
-    color: var(--clr-text-main);
-    transition: var(--transition-fast);
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    cursor: pointer !important;
+    font-size: 0.95rem !important;
+    color: var(--clr-text-main) !important;
+    transition: var(--transition-fast) !important;
+    text-align: left !important;
 }
 
 .radio-label input[type="radio"] {
-    appearance: none;
-    width: 18px;
-    height: 18px;
-    border: 2px solid var(--clr-border-card);
-    border-radius: 50%;
-    outline: none;
-    background: rgba(11, 15, 20, 0.4);
-    display: grid;
-    place-content: center;
-    cursor: pointer;
-    transition: var(--transition-fast);
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    width: 18px !important;
+    height: 18px !important;
+    border: 2px solid var(--clr-border-card) !important;
+    border-radius: 50% !important;
+    outline: none !important;
+    background: rgba(11, 15, 20, 0.4) !important;
+    display: grid !important;
+    place-content: center !important;
+    cursor: pointer !important;
+    transition: var(--transition-fast) !important;
+    margin: 0 !important;
 }
 
 .radio-label input[type="radio"]::before {
-    content: "";
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    transform: scale(0);
-    transition: 120ms transform ease-in-out;
-    background-color: var(--clr-accent);
+    content: "" !important;
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 50% !important;
+    transform: scale(0) !important;
+    transition: 120ms transform ease-in-out !important;
+    background-color: var(--clr-accent) !important;
 }
 
 .radio-label input[type="radio"]:checked {
-    border-color: var(--clr-accent);
+    border-color: var(--clr-accent) !important;
 }
 
 .radio-label input[type="radio"]:checked::before {
-    transform: scale(1);
+    transform: scale(1) !important;
 }
 
 .radio-label span {
-    user-select: none;
+    user-select: none !important;
 }
 
 /* Adjustments for responsiveness */
 @media (max-width: 575.98px) {
     .form-row {
-        grid-template-columns: 1fr;
-        gap: 1.25rem;
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
     }
 }
 
